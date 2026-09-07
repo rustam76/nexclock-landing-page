@@ -1,0 +1,32 @@
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
+import { Logo } from "./logo";
+import { NavMenu } from "./nav-menu";
+
+export const NavigationSheet = () => {
+  return (
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button variant="outline" size="icon" className="rounded-full">
+          <Menu />
+        </Button>
+      </SheetTrigger>
+      <SheetContent>
+        <SheetHeader>
+         <Logo />
+          <SheetTitle></SheetTitle>
+          <SheetDescription>
+          </SheetDescription>
+        </SheetHeader>
+      
+        <NavMenu orientation="vertical" className="mt-12" />
+
+        <div className="mt-8 space-y-4">
+         
+          <Button className="w-full xs:hidden">Get Started</Button>
+        </div>
+      </SheetContent>
+    </Sheet>
+  );
+};

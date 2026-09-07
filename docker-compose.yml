@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  landing-page:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kosmu-landing
+    restart: unless-stopped
+    ports:
+      - "3002:3002"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_API_URL=http://localhost:8080
+      - PORT=3002
+    networks:
+      - landing-network
+
+networks:
+  landing-network:
+    driver: bridge
