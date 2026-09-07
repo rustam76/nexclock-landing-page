@@ -32,6 +32,7 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-brand-accent: var(--brand-accent);
 
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
@@ -99,9 +100,9 @@
 
     --popover-foreground: hsl(0 0% 3.9%);
 
-    --primary: hsl(0 0% 9%);
+    --primary: hsl(282 52% 37%);
 
-    --primary-foreground: hsl(0 0% 98%);
+    --primary-foreground: hsl(0 0% 100%);
 
     --secondary: hsl(0 0% 96.1%);
 
@@ -123,7 +124,9 @@
 
     --input: hsl(0 0% 89.8%);
 
-    --ring: hsl(0 0% 3.9%);
+    --ring: hsl(282 52% 37%);
+
+    --brand-accent: #9dc441;
 
     --chart-1: hsl(12 76% 61%);
 
@@ -151,9 +154,9 @@
 
     --popover-foreground: hsl(0 0% 98%);
 
-    --primary: hsl(0 0% 98%);
+    --primary: hsl(282 55% 72%);
 
-    --primary-foreground: hsl(0 0% 9%);
+    --primary-foreground: hsl(282 52% 12%);
 
     --secondary: hsl(0 0% 14.9%);
 
@@ -175,7 +178,9 @@
 
     --input: hsl(0 0% 14.9%);
 
-    --ring: hsl(0 0% 83.1%);
+    --ring: hsl(282 55% 72%);
+
+    --brand-accent: #9dc441;
 
     --chart-1: hsl(220 70% 50%);
 

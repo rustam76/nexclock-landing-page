@@ -8,15 +8,16 @@ import {
 import { NavigationMenuProps } from "@radix-ui/react-navigation-menu";
 import Link from "next/link";
 import React, { useState } from "react";
+import { useT } from "@/lib/i18n";
 
 export const NavMenu = (props: NavigationMenuProps) => {
-  const [activeLink, setActiveLink] = useState<string>(""); // tidak aktif di awal
+  const t = useT();
+  const [activeLink, setActiveLink] = useState<string>("");
 
   const links = [
-    { href: "#features", label: "Fitur" },
-    { href: "#pricing", label: "Harga" },
-    { href: "#faq", label: "Pertanyaan" },
-    { href: "#testimonials", label: "Testimoni" },
+    { href: "/#features", label: t.nav.features },
+    { href: "/#faq", label: t.nav.faq },
+    { href: "/support", label: t.nav.support },
   ];
 
   return (
@@ -30,8 +31,8 @@ export const NavMenu = (props: NavigationMenuProps) => {
                 onClick={() => setActiveLink(link.href)}
                 className={`pb-1 transition-all duration-200 ${
                   activeLink === link.href
-                    ? "border-b-2 border-green-500 text-green-600"
-                    : "border-b-2 border-transparent hover:border-green-300"
+                    ? "border-b-2 border-primary text-primary"
+                    : "border-b-2 border-transparent hover:border-primary/40"
                 }`}
               >
                 {link.label}

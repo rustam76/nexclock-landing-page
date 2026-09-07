@@ -1,10 +1,16 @@
-import { ArrowUpRight, Forward } from "lucide-react";
+"use client";
+
+import { ArrowUpRight, MessageSquare } from "lucide-react";
 import { Button } from "./ui/button";
 import { AnimatedGridPattern } from "./ui/animated-grid-pattern";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { buildWaUrl, useLocale, useT } from "@/lib/i18n";
 
 export default function CTABanner() {
+  const t = useT();
+  const { locale } = useLocale();
+
   return (
     <div className="px-6">
       <div className="dark:border relative overflow-hidden my-20 w-full dark bg-background text-foreground max-w-(--breakpoint-lg) mx-auto rounded-2xl py-10 md:py-16 px-6 md:px-14">
@@ -27,28 +33,28 @@ export default function CTABanner() {
           )}
         />
         <div className="relative z-0 flex flex-col gap-3">
-          <h3 className="text-3xl md:text-4xl font-semibold">
-            Siap Mengelola Kost Lebih Mudah?
-          </h3>
-          <p className="mt-2 text-base md:text-lg">
-            Kostmu membantu Anda mengatur penyewa, pembayaran, hingga laporan
-            keuangan secara otomatis. Hemat waktu dan tingkatkan pendapatan Anda
-            sekarang juga!
-          </p>
+          <h3 className="text-3xl md:text-4xl font-semibold">{t.cta.title}</h3>
+          <p className="mt-2 text-base md:text-lg">{t.cta.description}</p>
         </div>
         <div className="relative z-0 mt-14 flex flex-col sm:flex-row gap-4">
           <Link
-            href="https://wa.me/6285242850576?text=Halo%20saya%20tertarik%20dengan%20KostMu"
+            href={buildWaUrl("demo", locale)}
             target="_blank"
             rel="noopener noreferrer"
           >
             <Button size="lg">
-              Coba Gratis <ArrowUpRight className="h-5! w-5!" />
+              {t.cta.requestDemo} <ArrowUpRight className="h-5! w-5!" />
             </Button>
           </Link>
-          <Button size="lg" variant="outline">
-            Lihat Fitur Lengkap <Forward className="h-5! w-5!" />
-          </Button>
+          <Link
+            href={buildWaUrl("sales", locale)}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button size="lg" variant="outline">
+              {t.cta.contactSales} <MessageSquare className="h-5! w-5!" />
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

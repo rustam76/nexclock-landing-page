@@ -6,10 +6,14 @@ import { NavigationSheet } from "./navigation-sheet";
 import ThemeToggle from "../theme-toggle";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-const Navbar = () => {
+import { SITE } from "@/lib/site";
+import { buildWaUrl, useLocale, useT } from "@/lib/i18n";
+import { cn } from "@/lib/utils";
 
-   const [scrolled, setScrolled] = useState(false);
-  const waMessage = encodeURIComponent("Halo, saya ingin mencoba KostMu gratis.");
+const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const t = useT();
+  const { locale, setLocale } = useLocale();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +22,7 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <nav
       className={`fixed z-10 top-6 inset-x-4 h-14 xs:h-16 transition-all duration-300
@@ -27,28 +32,53 @@ const Navbar = () => {
       <div className="h-full flex items-center justify-between mx-auto px-4">
         <Link href="/" className="flex justify-center items-center">
           <Logo />
-          <h1 className="px-2 text-lg font-bold text-green-500 dark:text-white">
-            KOSTMU
+          <h1 className="px-2 text-lg font-bold text-primary dark:text-white">
+            {SITE.name}
           </h1>
         </Link>
 
-        {/* Desktop Menu */}
         <NavMenu className="hidden md:block" />
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="hidden sm:flex items-center rounded-full border p-0.5 text-xs font-medium">
+            <button
+              type="button"
+              onClick={() => setLocale("en")}
+              className={cn(
+                "px-2 py-1 rounded-full transition-colors",
+                locale === "en"
+                  ? "bg-primary text-primary-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              {t.lang.en}
+            </button>
+            <button
+              type="button"
+              onClick={() => setLocale("id")}
+              className={cn(
+                "px-2 py-1 rounded-full transition-colors",
+                locale === "id"
+                  ? "bg-primary text-primary-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              {t.lang.id}
+            </button>
+          </div>
+
           <ThemeToggle />
-          {/* <Button variant="outline" className="hidden sm:inline-flex">
-            Sign In
-          </Button> */}
+
           <Link
-            href={`https://wa.me/6285242850576?text=${waMessage}`}
+            href={buildWaUrl("demo", locale)}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button className="hidden xs:inline-flex">Mulai Gratis</Button>
+            <Button className="hidden xs:inline-flex bg-primary hover:bg-primary/90">
+              {t.nav.requestDemo}
+            </Button>
           </Link>
 
-          {/* Mobile Menu */}
           <div className="md:hidden">
             <NavigationSheet />
           </div>
