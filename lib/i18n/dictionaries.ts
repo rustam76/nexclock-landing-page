@@ -203,23 +203,21 @@ How it is collected: through the NexClock attendance experience on supported dev
 
 Purpose of use: to help verify employee identity as part of recording attendance and reducing fraudulent check-ins.
 
-Whether raw images are stored: [ACTUAL FACIAL DATA PROCESSING METHOD]
+Whether raw images are stored: Yes. Face enrollment captures multiple facial photos on the mobile app and uploads them to the NexClock backend. Clock-in and clock-out attendance photos (including watermarked images) are also uploaded and retained as part of attendance records. Camera frames used only for on-device guidance are processed locally and are not kept as permanent face templates on the device.
 
-Whether biometric templates or embeddings are created: [ACTUAL FACIAL DATA PROCESSING METHOD]
+Whether biometric templates or embeddings are created: Yes. The mobile app does not create or store face embeddings on the device. Enrollment and identity matching are performed by the NexClock backend and AI service, which generate biometric templates/embeddings from the uploaded facial images for verification.
 
-How facial data is stored: [ACTUAL FACIAL DATA PROCESSING METHOD]
+How facial data is stored: Enrollment photos are sent as compressed JPEG image payloads to NexClock face enrollment APIs. Attendance photos are compressed, watermarked when applicable, uploaded with clock-in/clock-out submissions, and referenced by server photo URLs. On the device, only a face-registration status flag and temporary/offline attendance photo files may be kept; biometric templates are not stored in the app.
 
-Where facial data is stored: [ACTUAL STORAGE LOCATION]
+Where facial data is stored: On the organization's NexClock backend servers (API host configured per deployment), including uploaded assets served via the NexClock API (for example attendance photos under the backend uploads path). Temporary attendance photos may also be held in the app's private local storage while waiting to sync offline.
 
-Whether facial data is shared with third parties: [ACTUAL THIRD-PARTY PROCESSOR, IF ANY]
+Whether facial data is shared with third parties: Facial images used for enrollment and attendance verification are processed by NexClock systems operated for the organization. On-device face detection for camera guidance uses Google ML Kit Face Detection, which runs on the device. Facial data is not sold. Other infrastructure providers used to host or operate NexClock may process data only as needed to provide the service.
 
-Whether a third-party facial recognition service is used: [ACTUAL THIRD-PARTY PROCESSOR, IF ANY]
+Whether a third-party facial recognition service is used: No commercial third-party cloud facial recognition API is used by the mobile app for identity matching. Face enrollment and verification go through NexClock's own backend and AI service. Google ML Kit is used only for on-device face detection and capture guidance (for example pose and liveness cues), not for matching an employee identity.
 
-Retention period: [ACTUAL RETENTION PERIOD]
+Retention period: For as long as the employee's face enrollment remains active and related attendance records are retained for the organization using NexClock, subject to applicable law and the organization's configuration. The mobile app does not enforce a separate fixed facial-data retention timer.
 
-How facial data is deleted: upon organizational request, account or employee offboarding processes, or according to [ACTUAL RETENTION PERIOD], subject to applicable law and the organization's configuration.
-
-These placeholder values must be replaced with the actual implementation details before public launch.`,
+How facial data is deleted: upon organizational request, account or employee offboarding processes, face reset/re-registration flows supported by the product, local device cleanup when an account is signed out or switched, or according to the retention practices above, subject to applicable law and the organization's configuration.`,
       },
       {
         heading: "Sharing of information",
@@ -425,23 +423,21 @@ Cara dikumpulkan: melalui pengalaman kehadiran NexClock pada perangkat yang didu
 
 Tujuan penggunaan: membantu memverifikasi identitas karyawan sebagai bagian dari pencatatan kehadiran dan mengurangi check-in yang tidak sah.
 
-Apakah gambar mentah disimpan: [ACTUAL FACIAL DATA PROCESSING METHOD]
+Apakah gambar mentah disimpan: Ya. Pendaftaran wajah di aplikasi mobile mengambil beberapa foto wajah dan mengunggahnya ke backend NexClock. Foto absensi clock-in dan clock-out (termasuk gambar ber-watermark) juga diunggah dan disimpan sebagai bagian dari catatan kehadiran. Frame kamera yang hanya dipakai untuk panduan di perangkat diproses secara lokal dan tidak disimpan sebagai template wajah permanen di perangkat.
 
-Apakah template atau embedding biometrik dibuat: [ACTUAL FACIAL DATA PROCESSING METHOD]
+Apakah template atau embedding biometrik dibuat: Ya. Aplikasi mobile tidak membuat atau menyimpan embedding wajah di perangkat. Pendaftaran dan pencocokan identitas dilakukan oleh backend dan AI service NexClock, yang menghasilkan template/embedding biometrik dari gambar wajah yang diunggah untuk verifikasi.
 
-Bagaimana data wajah disimpan: [ACTUAL FACIAL DATA PROCESSING METHOD]
+Bagaimana data wajah disimpan: Foto enrollment dikirim sebagai payload gambar JPEG terkompresi ke API pendaftaran wajah NexClock. Foto absensi dikompresi, diberi watermark bila berlaku, diunggah bersama pengiriman clock-in/clock-out, dan dirujuk melalui URL foto di server. Di perangkat, hanya status terdaftarnya wajah dan file foto absensi sementara/offline yang dapat disimpan; template biometrik tidak disimpan di aplikasi.
 
-Di mana data wajah disimpan: [ACTUAL STORAGE LOCATION]
+Di mana data wajah disimpan: Pada server backend NexClock milik organisasi (host API sesuai konfigurasi deployment), termasuk aset unggahan yang dilayani melalui API NexClock (misalnya foto absensi pada path uploads backend). Foto absensi sementara juga dapat disimpan di penyimpanan lokal privat aplikasi saat menunggu sinkronisasi offline.
 
-Apakah data wajah dibagikan kepada pihak ketiga: [ACTUAL THIRD-PARTY PROCESSOR, IF ANY]
+Apakah data wajah dibagikan kepada pihak ketiga: Gambar wajah untuk enrollment dan verifikasi kehadiran diproses oleh sistem NexClock yang dioperasikan untuk organisasi. Deteksi wajah di perangkat untuk panduan kamera menggunakan Google ML Kit Face Detection yang berjalan di perangkat. Data wajah tidak dijual. Penyedia infrastruktur lain yang membantu hosting atau operasi NexClock dapat memproses data hanya sejauh diperlukan untuk menyediakan layanan.
 
-Apakah layanan pengenalan wajah pihak ketiga digunakan: [ACTUAL THIRD-PARTY PROCESSOR, IF ANY]
+Apakah layanan pengenalan wajah pihak ketiga digunakan: Tidak ada API pengenalan wajah cloud pihak ketiga komersial yang dipakai aplikasi mobile untuk pencocokan identitas. Enrollment dan verifikasi wajah berjalan melalui backend dan AI service milik NexClock. Google ML Kit hanya dipakai untuk deteksi wajah dan panduan pengambilan gambar di perangkat (misalnya pose dan isyarat liveness), bukan untuk mencocokkan identitas karyawan.
 
-Periode retensi: [ACTUAL RETENTION PERIOD]
+Periode retensi: Selama pendaftaran wajah karyawan tetap aktif dan catatan kehadiran terkait disimpan untuk organisasi yang menggunakan NexClock, tunduk pada hukum yang berlaku dan konfigurasi organisasi. Aplikasi mobile tidak menerapkan timer retensi data wajah terpisah dengan jangka waktu tetap.
 
-Bagaimana data wajah dihapus: atas permintaan organisasi, proses offboarding akun atau karyawan, atau sesuai [ACTUAL RETENTION PERIOD], tunduk pada hukum yang berlaku dan konfigurasi organisasi.
-
-Nilai placeholder ini harus diganti dengan detail implementasi sebenarnya sebelum peluncuran publik.`,
+Bagaimana data wajah dihapus: atas permintaan organisasi, proses offboarding akun atau karyawan, alur reset/registrasi ulang wajah yang didukung produk, pembersihan data lokal saat akun keluar atau diganti, atau sesuai praktik retensi di atas, tunduk pada hukum yang berlaku dan konfigurasi organisasi.`,
       },
       {
         heading: "Pembagian informasi",
