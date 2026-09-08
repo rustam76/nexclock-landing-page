@@ -179,7 +179,7 @@ const en: Dictionary = {
   privacyPage: {
     title: "Privacy Policy",
     intro:
-      "This Privacy Policy explains how NexClock collects, uses, and protects information when organizations and individuals use the NexClock workforce and attendance management product and this website.",
+      "Effective date: September 9, 2026. This Privacy Policy explains how NexClock collects, uses, and protects information when organizations and individuals use the NexClock workforce and attendance management product and this website.",
     sections: [
       {
         heading: "Who we are",
@@ -187,45 +187,45 @@ const en: Dictionary = {
       },
       {
         heading: "Information we collect",
-        body: "Depending on how NexClock is used by an organization, we may process information such as account and profile details, employment-related identifiers configured by the organization, attendance records, schedule and shift information, device or app usage data needed to operate the service, and contact details submitted when requesting a demo or contacting support.",
+        body: "Depending on how NexClock is used by an organization, we may process information such as account and profile details, employment-related identifiers configured by the organization, attendance records, schedule and shift information, device or app usage data needed to operate the service, and contact details submitted when requesting a demo or contacting support. When an organization enables face verification, facial photographs may also be collected as described in the Facial / Biometric Data section. A profile photo chosen by the user is an account avatar only and is not used as a biometric template.",
       },
       {
         heading: "How we use information",
-        body: "We use information to provide workforce and attendance management features, authenticate and verify attendance activity as configured by the organization, operate and improve the product, respond to demo and support requests, and meet applicable legal obligations.",
+        body: "We use information to provide workforce and attendance management features, authenticate and verify attendance activity as configured by the organization, operate the product, respond to demo and support requests, and meet applicable legal obligations. Facial photographs are used only for attendance identity verification and attendance evidence, as described in the Facial / Biometric Data section. They are not used to improve the product, for advertising, analytics, or profiling.",
       },
       {
         heading: "Facial / Biometric Data",
-        body: `NexClock may process facial data as part of face verification during attendance.
+        body: `NexClock may process facial data only as part of face verification during attendance, when the organization enables that feature.
 
-What facial data may be collected: facial images or related biometric signals captured during the attendance verification flow, as configured by the organization.
+What facial data may be collected: facial photographs taken for face enrollment, and facial photographs taken for clock-in or clock-out attendance. The mobile app does not collect or store a face embedding, face print, or other biometric template. On-device detection results, such as whether a face is in frame and its position, are used only to guide the camera and are discarded immediately. They are not saved as face data.
 
-How it is collected: through the NexClock attendance experience on supported devices when face verification is enabled.
+How it is collected: through the device camera in the NexClock mobile app during face enrollment and clock-in or clock-out, when face verification is enabled.
 
-Purpose of use: to help verify employee identity as part of recording attendance and reducing fraudulent check-ins.
+Purpose of use: to help verify employee identity as part of recording attendance and reducing fraudulent check-ins. Facial photographs are used only for identity verification and as attendance evidence. They are not used for advertising, analytics, profiling, product improvement, or any other purpose.
 
-Whether raw images are stored: Yes. Face enrollment captures multiple facial photos on the mobile app and uploads them to the NexClock backend. Clock-in and clock-out attendance photos (including watermarked images) are also uploaded and retained as part of attendance records. Camera frames used only for on-device guidance are processed locally and are not kept as permanent face templates on the device.
+Whether raw images are stored: Yes, on the organization's NexClock servers. Face enrollment captures several facial photos, uploads them, and then deletes those files from the device immediately after a successful upload and also when the enrollment screen is closed. Clock-in and clock-out attendance photos, including watermarked images, are uploaded and kept as part of the attendance record. Camera frames used only for on-device guidance are processed in memory and are not stored as face templates.
 
-Whether biometric templates or embeddings are created: Yes. The mobile app does not create or store face embeddings on the device. Enrollment and identity matching are performed by the NexClock backend and AI service, which generate biometric templates/embeddings from the uploaded facial images for verification.
+Whether biometric templates or embeddings are created: Yes, on the NexClock backend only. The mobile app does not create or store face embeddings or biometric templates. Enrollment and identity matching are performed by the NexClock backend and AI service, which generate biometric templates or embeddings from the uploaded facial photographs for verification.
 
-How facial data is stored: Enrollment photos are sent as compressed JPEG image payloads to NexClock face enrollment APIs. Attendance photos are compressed, watermarked when applicable, uploaded with clock-in/clock-out submissions, and referenced by server photo URLs. On the device, only a face-registration status flag and temporary/offline attendance photo files may be kept; biometric templates are not stored in the app.
+How facial data is stored: Enrollment photos are sent as compressed JPEG images to NexClock face enrollment APIs and are not kept on the device after upload. Attendance photos are compressed, watermarked when applicable, uploaded with clock-in or clock-out submissions, and referenced by server photo URLs. On the device, the app may keep only a face-registration status flag and temporary offline attendance photo files in private app storage. Biometric templates are not stored in the app. If the user chooses Save to gallery, a watermarked attendance photo may be written to the device photo library. That copy is controlled by the user and is not a biometric template.
 
-Where facial data is stored: On the organization's NexClock backend servers (API host configured per deployment), including uploaded assets served via the NexClock API (for example attendance photos under the backend uploads path). Temporary attendance photos may also be held in the app's private local storage while waiting to sync offline.
+Where facial data is stored: On the organization's NexClock backend servers, including uploaded attendance photos served through the NexClock API. While the device is offline, the attendance photo needed for that pending clock-in or clock-out is held only in the app's private storage and is deleted automatically after a successful sync. Facial photographs are not written to public storage unless the user explicitly saves a watermarked attendance photo to the photo library.
 
-Whether facial data is shared with third parties: Facial images used for enrollment and attendance verification are processed by NexClock systems operated for the organization. On-device face detection for camera guidance uses Google ML Kit Face Detection, which runs on the device. Facial data is not sold. Other infrastructure providers used to host or operate NexClock may process data only as needed to provide the service.
+Whether facial data is shared with third parties: Facial photographs used for enrollment and attendance verification are processed by NexClock systems operated for the organization. Google ML Kit Face Detection runs entirely on the device for camera guidance and does not receive uploaded facial photographs for identity matching. Facial data is not sold and is not shared for advertising. Infrastructure providers that host the organization's NexClock servers may process uploaded images only as needed to provide the service.
 
-Whether a third-party facial recognition service is used: No commercial third-party cloud facial recognition API is used by the mobile app for identity matching. Face enrollment and verification go through NexClock's own backend and AI service. Google ML Kit is used only for on-device face detection and capture guidance (for example pose and liveness cues), not for matching an employee identity.
+Whether a third-party facial recognition service is used: No commercial third-party cloud facial recognition API is used by the mobile app for identity matching. Face enrollment and verification go through NexClock's own backend and AI service. Google ML Kit is used only for on-device face detection and capture guidance, such as pose and liveness cues, not for matching an employee identity and not for storing a biometric template.
 
-Retention period: For as long as the employee's face enrollment remains active and related attendance records are retained for the organization using NexClock, subject to applicable law and the organization's configuration. The mobile app does not enforce a separate fixed facial-data retention timer.
+Retention period: On the device, enrollment photos are deleted immediately after a successful upload or when enrollment is closed. Offline attendance photos in private app storage are kept only until they sync successfully, then deleted. On the organization's NexClock servers, enrollment templates and attendance photos are retained for as long as the employee's face enrollment remains active and related attendance records are kept, subject to applicable law and the organization's configuration. The app does not apply a separate fixed retention period on the server.
 
-How facial data is deleted: upon organizational request, account or employee offboarding processes, face reset/re-registration flows supported by the product, local device cleanup when an account is signed out or switched, or according to the retention practices above, subject to applicable law and the organization's configuration.`,
+How facial data is deleted: upon organizational request, account or employee offboarding, face reset or re-registration supported by the product, or according to the retention practices above, subject to applicable law and the organization's configuration. On the device, enrollment photos are deleted immediately after a successful upload or when leaving enrollment. Temporary attendance photos in private app storage are deleted automatically after a successful sync. Leftover face files are removed when the account is signed out or switched.`,
       },
       {
         heading: "Sharing of information",
-        body: "We do not sell personal information. Information may be processed by service providers that help us host, operate, or support NexClock, only as needed to provide the service, and as required by law. Organization administrators control workforce data within their NexClock workspace.",
+        body: "We do not sell personal information. Facial data is not sold and is not shared for advertising. Sharing of facial photographs is limited to what is described in the Facial / Biometric Data section. Other information may be processed by service providers that help us host, operate, or support NexClock, only as needed to provide the service, and as required by law. Organization administrators control workforce data within their NexClock workspace.",
       },
       {
         heading: "Data retention",
-        body: "We retain information for as long as needed to provide the service to the organization, comply with legal obligations, resolve disputes, and enforce agreements. Facial and biometric retention is described in the Facial / Biometric Data section above.",
+        body: "We retain information for as long as needed to provide the service to the organization, comply with legal obligations, resolve disputes, and enforce agreements. Facial and biometric retention, including immediate deletion of face photos on the device after upload or sync, is described in the Facial / Biometric Data section above.",
       },
       {
         heading: "Security",
@@ -399,7 +399,7 @@ const id: Dictionary = {
   privacyPage: {
     title: "Kebijakan Privasi",
     intro:
-      "Kebijakan Privasi ini menjelaskan bagaimana NexClock mengumpulkan, menggunakan, dan melindungi informasi ketika organisasi serta individu menggunakan produk manajemen tenaga kerja dan kehadiran NexClock serta website ini.",
+      "Tanggal berlaku: 9 September 2026. Kebijakan Privasi ini menjelaskan bagaimana NexClock mengumpulkan, menggunakan, dan melindungi informasi ketika organisasi serta individu menggunakan produk manajemen tenaga kerja dan kehadiran NexClock serta website ini.",
     sections: [
       {
         heading: "Siapa kami",
@@ -407,45 +407,45 @@ const id: Dictionary = {
       },
       {
         heading: "Informasi yang kami kumpulkan",
-        body: "Tergantung cara organisasi menggunakan NexClock, kami dapat memproses informasi seperti detail akun dan profil, pengenal terkait kepegawaian yang dikonfigurasi organisasi, catatan kehadiran, informasi jadwal dan shift, data perangkat atau penggunaan aplikasi yang diperlukan untuk menjalankan layanan, serta detail kontak yang dikirim saat meminta demo atau menghubungi dukungan.",
+        body: "Tergantung cara organisasi menggunakan NexClock, kami dapat memproses informasi seperti detail akun dan profil, pengenal terkait kepegawaian yang dikonfigurasi organisasi, catatan kehadiran, informasi jadwal dan shift, data perangkat atau penggunaan aplikasi yang diperlukan untuk menjalankan layanan, serta detail kontak yang dikirim saat meminta demo atau menghubungi dukungan. Jika organisasi mengaktifkan verifikasi wajah, foto wajah juga dapat dikumpulkan sebagaimana dijelaskan pada bagian Data Wajah / Biometrik. Foto profil yang dipilih pengguna hanya avatar akun dan tidak digunakan sebagai template biometrik.",
       },
       {
         heading: "Bagaimana kami menggunakan informasi",
-        body: "Kami menggunakan informasi untuk menyediakan fitur manajemen tenaga kerja dan kehadiran, mengautentikasi serta memverifikasi aktivitas kehadiran sesuai konfigurasi organisasi, mengoperasikan dan meningkatkan produk, menanggapi permintaan demo dan dukungan, serta memenuhi kewajiban hukum yang berlaku.",
+        body: "Kami menggunakan informasi untuk menyediakan fitur manajemen tenaga kerja dan kehadiran, mengautentikasi serta memverifikasi aktivitas kehadiran sesuai konfigurasi organisasi, mengoperasikan produk, menanggapi permintaan demo dan dukungan, serta memenuhi kewajiban hukum yang berlaku. Foto wajah hanya digunakan untuk verifikasi identitas absensi dan bukti absensi, sebagaimana dijelaskan pada bagian Data Wajah / Biometrik. Data wajah tidak digunakan untuk meningkatkan produk, iklan, analitik, atau profiling.",
       },
       {
         heading: "Data Wajah / Biometrik",
-        body: `NexClock dapat memproses data wajah sebagai bagian dari verifikasi wajah saat kehadiran.
+        body: `NexClock dapat memproses data wajah hanya sebagai bagian dari verifikasi wajah saat kehadiran, jika organisasi mengaktifkan fitur tersebut.
 
-Data wajah yang dapat dikumpulkan: gambar wajah atau sinyal biometrik terkait yang diambil selama alur verifikasi kehadiran, sesuai konfigurasi organisasi.
+Data wajah yang dapat dikumpulkan: foto wajah untuk pendaftaran wajah, dan foto wajah untuk absensi clock-in atau clock-out. Aplikasi mobile tidak mengumpulkan atau menyimpan embedding wajah, face print, atau template biometrik lain. Hasil deteksi di perangkat, seperti apakah wajah berada di bingkai dan posisinya, hanya dipakai untuk memandu kamera dan langsung dibuang. Hasil itu tidak disimpan sebagai data wajah.
 
-Cara dikumpulkan: melalui pengalaman kehadiran NexClock pada perangkat yang didukung ketika verifikasi wajah diaktifkan.
+Cara dikumpulkan: melalui kamera perangkat di aplikasi mobile NexClock saat pendaftaran wajah dan clock-in atau clock-out, jika verifikasi wajah diaktifkan.
 
-Tujuan penggunaan: membantu memverifikasi identitas karyawan sebagai bagian dari pencatatan kehadiran dan mengurangi check-in yang tidak sah.
+Tujuan penggunaan: membantu memverifikasi identitas karyawan sebagai bagian dari pencatatan kehadiran dan mengurangi check-in yang tidak sah. Foto wajah hanya digunakan untuk verifikasi identitas dan bukti absensi. Data wajah tidak digunakan untuk iklan, analitik, profiling, peningkatan produk, atau tujuan lain.
 
-Apakah gambar mentah disimpan: Ya. Pendaftaran wajah di aplikasi mobile mengambil beberapa foto wajah dan mengunggahnya ke backend NexClock. Foto absensi clock-in dan clock-out (termasuk gambar ber-watermark) juga diunggah dan disimpan sebagai bagian dari catatan kehadiran. Frame kamera yang hanya dipakai untuk panduan di perangkat diproses secara lokal dan tidak disimpan sebagai template wajah permanen di perangkat.
+Apakah gambar mentah disimpan: Ya, di server NexClock milik organisasi. Pendaftaran wajah mengambil beberapa foto wajah, mengunggahnya, lalu menghapus file tersebut dari perangkat segera setelah unggahan berhasil dan juga saat layar pendaftaran ditutup. Foto absensi clock-in dan clock-out, termasuk gambar ber-watermark, diunggah dan disimpan sebagai bagian dari catatan kehadiran. Frame kamera yang hanya dipakai untuk panduan di perangkat diproses di memori dan tidak disimpan sebagai template wajah.
 
-Apakah template atau embedding biometrik dibuat: Ya. Aplikasi mobile tidak membuat atau menyimpan embedding wajah di perangkat. Pendaftaran dan pencocokan identitas dilakukan oleh backend dan AI service NexClock, yang menghasilkan template/embedding biometrik dari gambar wajah yang diunggah untuk verifikasi.
+Apakah template atau embedding biometrik dibuat: Ya, hanya di backend NexClock. Aplikasi mobile tidak membuat atau menyimpan embedding wajah atau template biometrik. Pendaftaran dan pencocokan identitas dilakukan oleh backend dan AI service NexClock, yang menghasilkan template atau embedding biometrik dari foto wajah yang diunggah untuk verifikasi.
 
-Bagaimana data wajah disimpan: Foto enrollment dikirim sebagai payload gambar JPEG terkompresi ke API pendaftaran wajah NexClock. Foto absensi dikompresi, diberi watermark bila berlaku, diunggah bersama pengiriman clock-in/clock-out, dan dirujuk melalui URL foto di server. Di perangkat, hanya status terdaftarnya wajah dan file foto absensi sementara/offline yang dapat disimpan; template biometrik tidak disimpan di aplikasi.
+Bagaimana data wajah disimpan: Foto enrollment dikirim sebagai gambar JPEG terkompresi ke API pendaftaran wajah NexClock dan tidak disimpan di perangkat setelah diunggah. Foto absensi dikompresi, diberi watermark bila berlaku, diunggah bersama pengiriman clock-in atau clock-out, dan dirujuk melalui URL foto di server. Di perangkat, aplikasi hanya dapat menyimpan status terdaftarnya wajah dan file foto absensi offline sementara di penyimpanan privat aplikasi. Template biometrik tidak disimpan di aplikasi. Jika pengguna memilih Simpan ke galeri, foto absensi ber-watermark dapat ditulis ke galeri foto perangkat. Salinan itu dikontrol oleh pengguna dan bukan template biometrik.
 
-Di mana data wajah disimpan: Pada server backend NexClock milik organisasi (host API sesuai konfigurasi deployment), termasuk aset unggahan yang dilayani melalui API NexClock (misalnya foto absensi pada path uploads backend). Foto absensi sementara juga dapat disimpan di penyimpanan lokal privat aplikasi saat menunggu sinkronisasi offline.
+Di mana data wajah disimpan: Pada server backend NexClock milik organisasi, termasuk foto absensi yang dilayani melalui API NexClock. Saat perangkat offline, foto absensi yang diperlukan untuk clock-in atau clock-out yang tertunda hanya disimpan di penyimpanan privat aplikasi dan dihapus otomatis setelah sinkronisasi berhasil. Foto wajah tidak ditulis ke penyimpanan publik kecuali pengguna secara eksplisit menyimpan foto absensi ber-watermark ke galeri.
 
-Apakah data wajah dibagikan kepada pihak ketiga: Gambar wajah untuk enrollment dan verifikasi kehadiran diproses oleh sistem NexClock yang dioperasikan untuk organisasi. Deteksi wajah di perangkat untuk panduan kamera menggunakan Google ML Kit Face Detection yang berjalan di perangkat. Data wajah tidak dijual. Penyedia infrastruktur lain yang membantu hosting atau operasi NexClock dapat memproses data hanya sejauh diperlukan untuk menyediakan layanan.
+Apakah data wajah dibagikan kepada pihak ketiga: Foto wajah untuk enrollment dan verifikasi kehadiran diproses oleh sistem NexClock yang dioperasikan untuk organisasi. Google ML Kit Face Detection berjalan sepenuhnya di perangkat untuk panduan kamera dan tidak menerima foto wajah yang diunggah untuk pencocokan identitas. Data wajah tidak dijual dan tidak dibagikan untuk iklan. Penyedia infrastruktur yang menghosting server NexClock organisasi dapat memproses gambar yang diunggah hanya sejauh diperlukan untuk menyediakan layanan.
 
-Apakah layanan pengenalan wajah pihak ketiga digunakan: Tidak ada API pengenalan wajah cloud pihak ketiga komersial yang dipakai aplikasi mobile untuk pencocokan identitas. Enrollment dan verifikasi wajah berjalan melalui backend dan AI service milik NexClock. Google ML Kit hanya dipakai untuk deteksi wajah dan panduan pengambilan gambar di perangkat (misalnya pose dan isyarat liveness), bukan untuk mencocokkan identitas karyawan.
+Apakah layanan pengenalan wajah pihak ketiga digunakan: Tidak ada API pengenalan wajah cloud pihak ketiga komersial yang dipakai aplikasi mobile untuk pencocokan identitas. Enrollment dan verifikasi wajah berjalan melalui backend dan AI service milik NexClock. Google ML Kit hanya dipakai untuk deteksi wajah dan panduan pengambilan gambar di perangkat, seperti pose dan isyarat liveness, bukan untuk mencocokkan identitas karyawan dan bukan untuk menyimpan template biometrik.
 
-Periode retensi: Selama pendaftaran wajah karyawan tetap aktif dan catatan kehadiran terkait disimpan untuk organisasi yang menggunakan NexClock, tunduk pada hukum yang berlaku dan konfigurasi organisasi. Aplikasi mobile tidak menerapkan timer retensi data wajah terpisah dengan jangka waktu tetap.
+Periode retensi: Di perangkat, foto enrollment dihapus segera setelah unggahan berhasil atau saat pendaftaran ditutup. Foto absensi offline di penyimpanan privat aplikasi disimpan hanya sampai sinkronisasi berhasil, lalu dihapus. Di server NexClock organisasi, template enrollment dan foto absensi disimpan selama pendaftaran wajah karyawan tetap aktif dan catatan kehadiran terkait masih disimpan, tunduk pada hukum yang berlaku dan konfigurasi organisasi. Aplikasi tidak menerapkan jangka waktu retensi tetap yang terpisah di server.
 
-Bagaimana data wajah dihapus: atas permintaan organisasi, proses offboarding akun atau karyawan, alur reset/registrasi ulang wajah yang didukung produk, pembersihan data lokal saat akun keluar atau diganti, atau sesuai praktik retensi di atas, tunduk pada hukum yang berlaku dan konfigurasi organisasi.`,
+Bagaimana data wajah dihapus: atas permintaan organisasi, proses offboarding akun atau karyawan, reset atau pendaftaran ulang wajah yang didukung produk, atau sesuai praktik retensi di atas, tunduk pada hukum yang berlaku dan konfigurasi organisasi. Di perangkat, foto enrollment dihapus segera setelah unggahan berhasil atau saat meninggalkan pendaftaran. Foto absensi sementara di penyimpanan privat aplikasi dihapus otomatis setelah sinkronisasi berhasil. Sisa file wajah dihapus saat akun keluar atau diganti.`,
       },
       {
         heading: "Pembagian informasi",
-        body: "Kami tidak menjual informasi pribadi. Informasi dapat diproses oleh penyedia layanan yang membantu hosting, operasi, atau dukungan NexClock, hanya sejauh diperlukan untuk menyediakan layanan, dan sebagaimana diwajibkan oleh hukum. Administrator organisasi mengontrol data tenaga kerja dalam workspace NexClock mereka.",
+        body: "Kami tidak menjual informasi pribadi. Data wajah tidak dijual dan tidak dibagikan untuk iklan. Pembagian foto wajah terbatas pada yang dijelaskan di bagian Data Wajah / Biometrik. Informasi lain dapat diproses oleh penyedia layanan yang membantu hosting, operasi, atau dukungan NexClock, hanya sejauh diperlukan untuk menyediakan layanan, dan sebagaimana diwajibkan oleh hukum. Administrator organisasi mengontrol data tenaga kerja dalam workspace NexClock mereka.",
       },
       {
         heading: "Retensi data",
-        body: "Kami menyimpan informasi selama diperlukan untuk menyediakan layanan kepada organisasi, mematuhi kewajiban hukum, menyelesaikan sengketa, dan menegakkan perjanjian. Retensi data wajah dan biometrik dijelaskan pada bagian Data Wajah / Biometrik di atas.",
+        body: "Kami menyimpan informasi selama diperlukan untuk menyediakan layanan kepada organisasi, mematuhi kewajiban hukum, menyelesaikan sengketa, dan menegakkan perjanjian. Retensi data wajah dan biometrik, termasuk penghapusan segera foto wajah di perangkat setelah unggahan atau sinkronisasi, dijelaskan pada bagian Data Wajah / Biometrik di atas.",
       },
       {
         heading: "Keamanan",

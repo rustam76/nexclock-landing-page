@@ -19,7 +19,14 @@ export default function PrivacyPage() {
             {t.privacyPage.intro}
           </p>
           {t.privacyPage.sections.map((section) => (
-            <section key={section.heading} className="space-y-3">
+            <section
+              key={section.heading}
+              id={section.heading
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/^-|-$/g, "")}
+              className="space-y-3"
+            >
               <h2 className="text-xl xs:text-2xl font-semibold tracking-tight">
                 {section.heading}
               </h2>
