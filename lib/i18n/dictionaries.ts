@@ -179,7 +179,7 @@ const en: Dictionary = {
   privacyPage: {
     title: "Privacy Policy",
     intro:
-      "Effective date: September 9, 2026. This Privacy Policy explains how NexClock collects, uses, and protects information when organizations and individuals use the NexClock workforce and attendance management product and this website.",
+      "Effective date: September 10, 2026. This Privacy Policy explains how NexClock collects, uses, and protects information when organizations and individuals use the NexClock workforce and attendance management product, the NexClock iOS and Android apps, and this website.",
     sections: [
       {
         heading: "Who we are",
@@ -217,11 +217,19 @@ Whether a third-party facial recognition service is used: No commercial third-pa
 
 Retention period: On the device, enrollment photos are deleted immediately after a successful upload or when enrollment is closed. Offline attendance photos in private app storage are kept only until they sync successfully, then deleted. On the organization's NexClock servers, enrollment templates and attendance photos are retained for as long as the employee's face enrollment remains active and related attendance records are kept, subject to applicable law and the organization's configuration. The app does not apply a separate fixed retention period on the server.
 
-How facial data is deleted: upon organizational request, account or employee offboarding, face reset or re-registration supported by the product, or according to the retention practices above, subject to applicable law and the organization's configuration. On the device, enrollment photos are deleted immediately after a successful upload or when leaving enrollment. Temporary attendance photos in private app storage are deleted automatically after a successful sync. Leftover face files are removed when the account is signed out or switched.`,
+How facial data is deleted: upon organizational request, account or employee offboarding, face reset or re-registration supported by the product, an in-app Delete Account request in Profile > Settings, or according to the retention practices above, subject to applicable law and the organization's configuration. On the device, enrollment photos are deleted immediately after a successful upload or when leaving enrollment. Temporary attendance photos in private app storage are deleted automatically after a successful sync. Leftover face files are removed when the account is signed out or switched.
+
+Camera and facial-mapping data gathered through Camera APIs is not used for marketing, advertising, or use-based data mining, including by third parties.
+
+How to revoke consent for facial data: decline or later turn off Camera permission in iOS Settings for NexClock; do not complete face enrollment; reset face enrollment from Profile > Settings; or use Delete Account in Profile > Settings. See Your choices and rights for the full deletion path.`,
       },
       {
         heading: "Sharing of information",
-        body: "We do not sell personal information. Facial data is not sold and is not shared for advertising. Sharing of facial photographs is limited to what is described in the Facial / Biometric Data section. Other information may be processed by service providers that help us host, operate, or support NexClock, only as needed to provide the service, and as required by law. Organization administrators control workforce data within their NexClock workspace.",
+        body: "We do not sell personal information. Facial data is not sold and is not shared for advertising. Sharing of facial photographs is limited to what is described in the Facial / Biometric Data section. Other information may be processed by service providers that help us host, operate, or support NexClock, only as needed to provide the service, and as required by law. Organization administrators control workforce data within their NexClock workspace. Any third party with whom NexClock shares user data in accordance with this policy—including analytics or infrastructure tools if used, advertising networks (none are used for facial or camera data), third-party SDKs such as Google ML Kit Face Detection (on-device only), and any parent, subsidiary, or related entity that has access to user data—will provide the same or equal protection of user data as stated in this Privacy Policy and required by Apple App Store Review Guideline 5.1.",
+      },
+      {
+        heading: "Third-party processors",
+        body: "NexClock does not sell personal data and does not use third-party advertising networks in the mobile app. Camera frames used for pose and liveness guidance are processed on the device by Google ML Kit Face Detection and are not uploaded to Google for identity matching. Face enrollment and attendance identity matching are performed by NexClock's own backend and AI service operated for the organization, not by a commercial third-party cloud facial-recognition API. Hosting and infrastructure providers that store the organization's NexClock servers may process uploaded images and other records only as needed to provide hosting. Those processors, SDKs, and related entities provide the same or equal protection of user data as stated in this Privacy Policy. We obtain permission through the iOS camera prompt, in-app face-enrollment consent, and organization-provisioned account access before facial photographs are collected and uploaded.",
       },
       {
         heading: "Data retention",
@@ -233,11 +241,11 @@ How facial data is deleted: upon organizational request, account or employee off
       },
       {
         heading: "Your choices and rights",
-        body: "Employees and administrators should contact their organization for requests related to workforce records managed in NexClock. You may also contact NexClock support regarding privacy questions related to this website or product operations.",
+        body: "This Privacy Policy is available at https://nexclock.app/privacy and inside the NexClock app (login screen and Profile > Settings > Privacy Policy).\n\nRevoke consent: you can turn off Camera, Location, Microphone, Speech Recognition, or Photo Library access in iOS Settings for NexClock. The app respects those permission settings. Face attendance, location-based attendance, voice input to the AI assistant, or choosing a profile photo will not work without the related permission. Paid features, if any, are not conditioned on granting these permissions.\n\nDelete face data: in the app, open Profile > Settings. You may update face enrollment (the previous enrollment is replaced after a successful save) or start Delete Account, which requests removal of face enrollment from the organization's NexClock servers and deletes leftover face files on the device.\n\nDelete your account: NexClock accounts are created and managed by your employer or organization; there is no public self-serve sign-up. Use Profile > Settings > Delete Account in the NexClock app to start deletion. That flow (1) requests deletion of face enrollment on NexClock servers, (2) deletes local photos, tokens, and cached app data on the device, (3) signs you out, and (4) notifies NexClock support so your organization can complete deletion of remaining workforce records, subject to applicable law and the organization's configuration. You may also ask your organization administrator or contact NexClock support via the Support page or WhatsApp.",
       },
       {
         heading: "Contact",
-        body: "For privacy questions, contact the NexClock team via the Support page or WhatsApp channel listed on this website.",
+        body: "For privacy questions, account deletion, or facial-data requests, use Delete Account or Privacy Policy in the NexClock app (Profile > Settings), contact your organization administrator, or contact the NexClock team via the Support page or WhatsApp channel listed on this website.",
       },
       {
         heading: "Updates",
@@ -399,7 +407,7 @@ const id: Dictionary = {
   privacyPage: {
     title: "Kebijakan Privasi",
     intro:
-      "Tanggal berlaku: 9 September 2026. Kebijakan Privasi ini menjelaskan bagaimana NexClock mengumpulkan, menggunakan, dan melindungi informasi ketika organisasi serta individu menggunakan produk manajemen tenaga kerja dan kehadiran NexClock serta website ini.",
+      "Tanggal berlaku: 10 September 2026. Kebijakan Privasi ini menjelaskan bagaimana NexClock mengumpulkan, menggunakan, dan melindungi informasi ketika organisasi serta individu menggunakan produk manajemen tenaga kerja dan kehadiran NexClock, aplikasi iOS dan Android NexClock, serta website ini.",
     sections: [
       {
         heading: "Siapa kami",
@@ -437,11 +445,19 @@ Apakah layanan pengenalan wajah pihak ketiga digunakan: Tidak ada API pengenalan
 
 Periode retensi: Di perangkat, foto enrollment dihapus segera setelah unggahan berhasil atau saat pendaftaran ditutup. Foto absensi offline di penyimpanan privat aplikasi disimpan hanya sampai sinkronisasi berhasil, lalu dihapus. Di server NexClock organisasi, template enrollment dan foto absensi disimpan selama pendaftaran wajah karyawan tetap aktif dan catatan kehadiran terkait masih disimpan, tunduk pada hukum yang berlaku dan konfigurasi organisasi. Aplikasi tidak menerapkan jangka waktu retensi tetap yang terpisah di server.
 
-Bagaimana data wajah dihapus: atas permintaan organisasi, proses offboarding akun atau karyawan, reset atau pendaftaran ulang wajah yang didukung produk, atau sesuai praktik retensi di atas, tunduk pada hukum yang berlaku dan konfigurasi organisasi. Di perangkat, foto enrollment dihapus segera setelah unggahan berhasil atau saat meninggalkan pendaftaran. Foto absensi sementara di penyimpanan privat aplikasi dihapus otomatis setelah sinkronisasi berhasil. Sisa file wajah dihapus saat akun keluar atau diganti.`,
+Bagaimana data wajah dihapus: atas permintaan organisasi, proses offboarding akun atau karyawan, reset atau pendaftaran ulang wajah yang didukung produk, permintaan Hapus Akun di Profil > Pengaturan, atau sesuai praktik retensi di atas, tunduk pada hukum yang berlaku dan konfigurasi organisasi. Di perangkat, foto enrollment dihapus segera setelah unggahan berhasil atau saat meninggalkan pendaftaran. Foto absensi sementara di penyimpanan privat aplikasi dihapus otomatis setelah sinkronisasi berhasil. Sisa file wajah dihapus saat akun keluar atau diganti.
+
+Data kamera dan pemetaan wajah yang dikumpulkan melalui Camera API tidak digunakan untuk pemasaran, iklan, atau penambangan data berbasis penggunaan, termasuk oleh pihak ketiga.
+
+Cara mencabut persetujuan data wajah: tolak atau matikan izin Kamera di Pengaturan iOS untuk NexClock; jangan selesaikan pendaftaran wajah; reset pendaftaran wajah dari Profil > Pengaturan; atau gunakan Hapus Akun di Profil > Pengaturan. Lihat Pilihan dan hak Anda untuk jalur penghapusan lengkap.`,
       },
       {
         heading: "Pembagian informasi",
-        body: "Kami tidak menjual informasi pribadi. Data wajah tidak dijual dan tidak dibagikan untuk iklan. Pembagian foto wajah terbatas pada yang dijelaskan di bagian Data Wajah / Biometrik. Informasi lain dapat diproses oleh penyedia layanan yang membantu hosting, operasi, atau dukungan NexClock, hanya sejauh diperlukan untuk menyediakan layanan, dan sebagaimana diwajibkan oleh hukum. Administrator organisasi mengontrol data tenaga kerja dalam workspace NexClock mereka.",
+        body: "Kami tidak menjual informasi pribadi. Data wajah tidak dijual dan tidak dibagikan untuk iklan. Pembagian foto wajah terbatas pada yang dijelaskan di bagian Data Wajah / Biometrik. Informasi lain dapat diproses oleh penyedia layanan yang membantu hosting, operasi, atau dukungan NexClock, hanya sejauh diperlukan untuk menyediakan layanan, dan sebagaimana diwajibkan oleh hukum. Administrator organisasi mengontrol data tenaga kerja dalam workspace NexClock mereka. Setiap pihak ketiga yang menerima data pengguna sesuai kebijakan ini—termasuk alat analitik atau infrastruktur jika dipakai, jaringan iklan (tidak dipakai untuk data wajah atau kamera), SDK pihak ketiga seperti Google ML Kit Face Detection (hanya di perangkat), serta entitas induk, anak, atau terkait yang memiliki akses ke data pengguna—akan memberikan perlindungan yang sama atau setara terhadap data pengguna sebagaimana dinyatakan dalam Kebijakan Privasi ini dan diwajibkan oleh Apple App Store Review Guideline 5.1.",
+      },
+      {
+        heading: "Prosesor pihak ketiga",
+        body: "NexClock tidak menjual data pribadi dan tidak memakai jaringan iklan pihak ketiga di aplikasi mobile. Frame kamera untuk panduan pose dan liveness diproses di perangkat oleh Google ML Kit Face Detection dan tidak diunggah ke Google untuk pencocokan identitas. Pendaftaran wajah dan pencocokan identitas absensi dilakukan oleh backend dan AI service milik NexClock yang dioperasikan untuk organisasi, bukan API pengenalan wajah cloud pihak ketiga komersial. Penyedia hosting dan infrastruktur yang menyimpan server NexClock organisasi dapat memproses gambar dan catatan yang diunggah hanya sejauh diperlukan untuk hosting. Prosesor, SDK, dan entitas terkait tersebut memberikan perlindungan yang sama atau setara terhadap data pengguna sebagaimana dinyatakan dalam Kebijakan Privasi ini. Izin diperoleh melalui prompt kamera iOS, persetujuan pendaftaran wajah di dalam aplikasi, dan akses akun yang disediakan organisasi sebelum foto wajah dikumpulkan dan diunggah.",
       },
       {
         heading: "Retensi data",
@@ -453,11 +469,11 @@ Bagaimana data wajah dihapus: atas permintaan organisasi, proses offboarding aku
       },
       {
         heading: "Pilihan dan hak Anda",
-        body: "Karyawan dan administrator sebaiknya menghubungi organisasi mereka untuk permintaan terkait catatan tenaga kerja yang dikelola di NexClock. Anda juga dapat menghubungi dukungan NexClock terkait pertanyaan privasi pada website ini atau operasi produk.",
+        body: "Kebijakan Privasi ini tersedia di https://nexclock.app/privacy dan di dalam aplikasi NexClock (layar masuk serta Profil > Pengaturan > Kebijakan Privasi).\n\nCabut persetujuan: Anda dapat mematikan akses Kamera, Lokasi, Mikrofon, Pengenalan Ucapan, atau Galeri di Pengaturan iOS untuk NexClock. Aplikasi menghormati pengaturan izin tersebut. Absensi wajah, absensi berbasis lokasi, input suara ke asisten AI, atau memilih foto profil tidak akan berfungsi tanpa izin terkait. Fitur berbayar, jika ada, tidak mensyaratkan pemberian izin ini.\n\nHapus data wajah: di aplikasi, buka Profil > Pengaturan. Anda dapat memperbarui pendaftaran wajah (pendaftaran lama diganti setelah penyimpanan berhasil) atau memulai Hapus Akun, yang meminta penghapusan pendaftaran wajah dari server NexClock organisasi dan menghapus sisa file wajah di perangkat.\n\nHapus akun Anda: akun NexClock dibuat dan dikelola oleh pemberi kerja atau organisasi Anda; tidak ada pendaftaran mandiri publik. Gunakan Profil > Pengaturan > Hapus Akun di aplikasi NexClock untuk memulai penghapusan. Alur itu (1) meminta penghapusan pendaftaran wajah di server NexClock, (2) menghapus foto lokal, token, dan data cache aplikasi di perangkat, (3) mengeluarkan Anda dari akun, dan (4) memberi tahu dukungan NexClock agar organisasi dapat menyelesaikan penghapusan sisa catatan tenaga kerja, tunduk pada hukum yang berlaku dan konfigurasi organisasi. Anda juga dapat meminta administrator organisasi atau menghubungi dukungan NexClock melalui halaman Dukungan atau WhatsApp.",
       },
       {
         heading: "Kontak",
-        body: "Untuk pertanyaan privasi, hubungi tim NexClock melalui halaman Dukungan atau saluran WhatsApp yang tertera di website ini.",
+        body: "Untuk pertanyaan privasi, penghapusan akun, atau permintaan data wajah, gunakan Hapus Akun atau Kebijakan Privasi di aplikasi NexClock (Profil > Pengaturan), hubungi administrator organisasi Anda, atau hubungi tim NexClock melalui halaman Dukungan atau saluran WhatsApp yang tertera di website ini.",
       },
       {
         heading: "Pembaruan",
