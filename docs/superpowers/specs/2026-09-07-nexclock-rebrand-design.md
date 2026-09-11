@@ -39,7 +39,7 @@ Organizations interested in NexClock can **Request a Demo** or **Contact Sales**
 | FAQ | Keep layout; rewrite for NexClock (includes org setup / how-it-works style Qs) |
 | Benefits / How It Works sections | **Do not add** new sections; cover via Features + FAQ |
 | Request Demo / Contact Sales | WhatsApp deep link only (no form, no backend) |
-| WhatsApp number | `6285242850576` (same as previous Kostmu number) |
+| WhatsApp number | `6285119105285` (same as previous Kostmu number) |
 | Support / Privacy / Terms | New routes `/support`, `/privacy`, `/terms` |
 
 ---
@@ -187,8 +187,8 @@ No trial/gratis/kost/payment-reminder content.
 
 ## 7. WhatsApp CTA behavior
 
-- Number: `6285242850576`  
-- Primary actions open `https://wa.me/6285242850576?text=...`  
+- Number: `6285119105285`  
+- Primary actions open `https://wa.me/6285119105285?text=...`  
 - Prefill messages differ by intent and active language, e.g.:  
   - Request Demo (EN): interest in a NexClock product demonstration  
   - Contact Sales (EN): interest in NexClock for the organization  

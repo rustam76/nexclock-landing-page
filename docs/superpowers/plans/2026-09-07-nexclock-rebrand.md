@@ -4,7 +4,7 @@
 
 **Goal:** Rebrand the existing Kostmu Next.js landing page into the official NexClock website via content/branding swap only — preserve layout, components, motion, and structure.
 
-**Architecture:** Keep the current Next.js App Router single-page marketing layout. Add a lightweight EN/ID locale context + dictionary (no i18n framework). Remove Pricing and Testimonials from the home render. Add `/support`, `/privacy`, and `/terms` pages reusing Navbar/Footer. All CTAs open WhatsApp (`6285242850576`) with intent-specific prefilled messages.
+**Architecture:** Keep the current Next.js App Router single-page marketing layout. Add a lightweight EN/ID locale context + dictionary (no i18n framework). Remove Pricing and Testimonials from the home render. Add `/support`, `/privacy`, and `/terms` pages reusing Navbar/Footer. All CTAs open WhatsApp (`6285119105285`) with intent-specific prefilled messages.
 
 **Tech Stack:** Next.js 15, React 19, Tailwind CSS 4, next-themes, lucide-react, motion (fix hero import if needed), no new heavy dependencies.
 
@@ -16,7 +16,7 @@
 - No fake testimonials, logos, statistics, or unverified compliance claims
 - Brand colors: primary `#702D91`, accent `#9DC441`
 - Logo: NexClock mark from `playstore-icon.png`
-- WhatsApp: `6285242850576` only; no demo form backend
+- WhatsApp: `6285119105285` only; no demo form backend
 - i18n: EN default + ID toggle via `localStorage`
 - Facial/biometric privacy details unknown → use exact placeholders from the design spec
 - Prefer existing patterns; leave `components/pricing.tsx` and `components/testimonials.tsx` unrendered (optional delete later)
@@ -85,7 +85,7 @@ export const SITE = {
   // Replace before public launch:
   // [NEXCLOCK_SITE_URL]
   url: "https://nexclock.app",
-  whatsappNumber: "6285242850576",
+  whatsappNumber: "6285119105285",
   brandPrimary: "#702D91",
   brandAccent: "#9DC441",
 } as const;

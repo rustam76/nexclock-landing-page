@@ -4,6 +4,14 @@ import Footer from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { useT } from "@/lib/i18n";
 
+function sectionAnchor(section: { heading: string; id?: string }) {
+  if (section.id) return section.id;
+  return section.heading
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
 export default function PrivacyPage() {
   const t = useT();
 
@@ -20,11 +28,8 @@ export default function PrivacyPage() {
           </p>
           {t.privacyPage.sections.map((section) => (
             <section
-              key={section.heading}
-              id={section.heading
-                .toLowerCase()
-                .replace(/[^a-z0-9]+/g, "-")
-                .replace(/^-|-$/g, "")}
+              key={section.id ?? section.heading}
+              id={sectionAnchor(section)}
               className="space-y-3"
             >
               <h2 className="text-xl xs:text-2xl font-semibold tracking-tight">
